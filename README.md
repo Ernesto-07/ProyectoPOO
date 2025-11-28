@@ -30,4 +30,4 @@ Es un programa simple pensado para practicar clases, atributos, métodos, encaps
 
 
 
-En este segundo avance se incluyo un archivo con el UML de diagrama de clases. 
+En este tercer avance se incluyo un archivo con el UML de diagrama de clases corregido y herencia, composicion y agregacion implementado al codigo. 
