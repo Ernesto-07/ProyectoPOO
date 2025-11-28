@@ -28,7 +28,7 @@ public:
     string get_nombre() { return nombre; }
 };
 
-// ---------------- CLIENTE ----------------
+// ------ CLIENTE ------
 class Cliente : public Persona {
 private:
     int numero_visitas;
@@ -44,7 +44,7 @@ public:
     int get_visitas() { return numero_visitas; }
 };
 
-// ---------------- MECANICO ----------------
+// ------ MECANICO ------
 class Mecanico : public Persona {
 private:
     int experiencia;
@@ -62,7 +62,7 @@ public:
     }
 };
 
-// ---------------- SERVICIO ----------------
+// ------ SERVICIO ------
 class Servicio {
 private:
     string tipo;
@@ -86,7 +86,7 @@ public:
     }
 };
 
-// ---------------- TALLER ----------------
+// ------ TALLER ------
 class Taller {
 private:
     string nombre;
