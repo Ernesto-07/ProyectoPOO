@@ -2,6 +2,7 @@
 #define VEHICULO_H
 
 #include <string>
+#include <iostream>
 using namespace std;
 
 class Vehiculo {
@@ -10,10 +11,22 @@ private:
     string modelo;
 
 public:
-    Vehiculo(string m, string mod);
-    string get_marca();
-    string get_modelo();
-    void describir();
+    Vehiculo() {
+        marca = "";
+        modelo = "";
+    }
+
+    Vehiculo(string m, string mod) {
+        marca = m;
+        modelo = mod;
+    }
+
+    string get_marca() { return marca; }
+    string get_modelo() { return modelo; }
+
+    void describir() {
+        cout << "Vehiculo: " << marca << " " << modelo << endl;
+    }
 };
 
 #endif
