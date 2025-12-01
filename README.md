@@ -20,6 +20,9 @@ Después, muestra esos datos en consola y también imprime mensajes como la desc
 
 # Cosas que harian tronar el codigo
 
+1. s
+2. s
+3. s
 
 
 # Consideraciones
