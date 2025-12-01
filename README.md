@@ -18,6 +18,8 @@ un servicio con su tipo y costo.
 
 Después, muestra esos datos en consola y también imprime mensajes como la descripción del vehículo, una bienvenida del mecánico y el costo del servicio.
 
+# Cosas que harian tronar el codigo
+
 
 
 # Consideraciones
