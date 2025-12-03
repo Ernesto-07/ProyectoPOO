@@ -20,9 +20,8 @@ Después, muestra esos datos en consola y también imprime mensajes como la desc
 
 # Cosas que harian tronar el codigo
 
-1. s
-2. s
-3. s
+1. Si el usuario escribe texto donde esperas un número (por ejemplo en edad o costo), cin entra en un estado de error. 
+2. Si el usuario mete un valor no numérico, cin falla y opcion no se actualiza, por lo que probablemente te saque del programa o se ciclara el menu hasta que sea una opcion valida.
 
 
 # Consideraciones
@@ -31,8 +30,11 @@ Corre en consola.
 
 Está hecho en C++ normal.
 
-Es un programa simple pensado para practicar clases, atributos, métodos, encapsulación y objetos.
+1. Entrar a carpeta donde se encuentre el "mainpoo.cpp" y donde se encuentren los demas .h
 
+2. Compilar con: "g++ mainpoo.cpp -o taller". Esto genera el archivo ejecutable
 
+3.  Ejecute el siguiente comando: taller
 
-En este tercer avance se incluyo un archivo con el UML de diagrama de clases corregido y herencia, composicion y agregacion implementado al codigo. 
+# Correcciones
+
