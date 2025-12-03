@@ -18,7 +18,11 @@ un servicio con su tipo y costo.
 
 Después, muestra esos datos en consola y también imprime mensajes como la descripción del vehículo, una bienvenida del mecánico y el costo del servicio.
 
-#Menu 
+# Diagrama de clases 
+
+[UML](./UML.png)
+
+# Menu 
 
 El menu tiene 6 opciones a considerar:
 
