@@ -18,6 +18,18 @@ un servicio con su tipo y costo.
 
 Después, muestra esos datos en consola y también imprime mensajes como la descripción del vehículo, una bienvenida del mecánico y el costo del servicio.
 
+#Menu 
+
+El menu tiene 6 opciones a considerar:
+
+0. Opcion de salir del programa al haber pasado por las demas opciones, o si el usuario quiere salir en cualquier momento. 
+1. Opcion de agregar el vehiculo
+2. Opcion de agregar el servicio que se le dara al vehiculo
+3. Opcion de mostrar lo que lleva por ahora el taller (los vehiculos con sus respectivos servicios)
+4. Opcion de agregar al cliente con su nombre, apellido, edad, etc.
+5. Opcion de mostrar al mecanico que dara el servicio.
+
+
 # Cosas que harian tronar el codigo
 
 1. Si el usuario escribe texto donde esperas un número (por ejemplo en edad o costo), cin entra en un estado de error. 
