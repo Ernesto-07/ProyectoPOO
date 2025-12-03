@@ -1,138 +1,80 @@
+/*
+ * Clase Taller
+ * Representa un taller mecánico.
+ * Contiene vehículos y servicios mediante composición.
+ */
+
 #ifndef TALLER_H
 #define TALLER_H
 
+#define MAX 5 // se defne un maximo de 5
+
+#include "Vehiculo.h"
+#include "Servicio.h"
 #include <string>
 #include <iostream>
 using namespace std;
 
-// ---------------- PERSONA ----------------
-class Persona {
-protected:
-    string nombre;
-    string apellido;
-    int edad;
-
-public:
-    Persona() {
-        nombre = "";
-        apellido = "";
-        edad = 0;
-    }
-
-    Persona(string n, string a, int e) {
-        nombre = n;
-        apellido = a;
-        edad = e;
-    }
-
-    string get_nombre() { return nombre; }
-};
-
-// ------ CLIENTE ------
-class Cliente : public Persona {
-private:
-    int numero_visitas;
-
-public:
-    Cliente() : Persona() { numero_visitas = 0; }
-
-    Cliente(string n, string a, int e, int visitas)
-        : Persona(n, a, e) {
-        numero_visitas = visitas;
-    }
-
-    int get_visitas() { return numero_visitas; }
-};
-
-// ------ MECANICO ------
-class Mecanico : public Persona {
-private:
-    int experiencia;
-
-public:
-    Mecanico() : Persona() { experiencia = 0; }
-
-    Mecanico(string n, string a, int e, int exp)
-        : Persona(n, a, e) {
-        experiencia = exp;
-    }
-
-    void bienvenida() {
-        cout << "Soy el mecanico " << nombre << ", listo para ayudarte." << endl;
-    }
-};
-
-// ------ SERVICIO ------
-class Servicio {
-private:
-    string tipo;
-    int costo;
-
-public:
-    Servicio() {
-        tipo = "";
-        costo = 0;
-    }
-
-    Servicio(string t, int c) {
-        tipo = t;
-        costo = c;
-    }
-
-    string get_tipo() { return tipo; }
-
-    void describir() {
-        cout << "Servicio: " << tipo << ", costo: $" << costo << endl;
-    }
-};
-
-// ------ TALLER ------
 class Taller {
 private:
-    string nombre;
+    string nombre; // nombre del taller
 
-    Cliente clientes[5];
-    int total_clientes;
+    Vehiculo vehiculos[MAX]; // arreglo de vehículos
+    int total_vehiculos;     // contador de vehículos registrados
 
-    Servicio servicios[5];
-    int total_servicios;
-
-    Vehiculo vehiculos[5];
-    int total_vehiculos;
+    Servicio servicios[MAX]; // arreglo de servicios
+    int total_servicios;     // contador de servicios registrados
 
 public:
+    // Constructor: inicializa nombre y contadores
     Taller(string n) {
         nombre = n;
-        total_clientes = 0;
-        total_servicios = 0;
         total_vehiculos = 0;
+        total_servicios = 0;
     }
 
-    // --- AGREGACIÓN ---
-    void agregarCliente(Cliente c) {
-        if (total_clientes < 5) {
-            clientes[total_clientes] = c;
-            total_clientes++;
-        }
-    }
-
-    void agregarServicio(Servicio s) {
-        if (total_servicios < 5) {
-            servicios[total_servicios] = s;
-            total_servicios++;
-        }
-    }
-
-    // --- COMPOSICIÓN ---
+    // Método para agregar un vehículo al taller
     void agregarVehiculo(string marca, string modelo) {
-        if (total_vehiculos < 5) {
+        if (total_vehiculos < MAX) {
             vehiculos[total_vehiculos] = Vehiculo(marca, modelo);
             total_vehiculos++;
+        } else {
+            cout << "No se pueden agregar más vehículos." << endl;
         }
     }
 
+    // Método para agregar un servicio al taller
+    void agregarServicio(Servicio s) {
+        if (total_servicios < MAX) {
+            servicios[total_servicios] = s;
+            total_servicios++;
+        } else {
+            cout << "No se pueden agregar más servicios." << endl;
+        }
+    }
+
+    // Método para mostrar el estado del taller
     void describir() {
+        cout << "\n===== Estado del Taller =====" << endl;
         cout << "Taller: " << nombre << endl;
+
+        cout << "\nVehiculos registrados:" << endl;
+        if (total_vehiculos == 0) {
+            cout << "  Ninguno" << endl;
+        } else {
+            for (int i = 0; i < total_vehiculos; i++) {
+                vehiculos[i].describir();
+            }
+        }
+
+        cout << "\nServicios disponibles:" << endl;
+        if (total_servicios == 0) {
+            cout << "  Ninguno" << endl;
+        } else {
+            for (int i = 0; i < total_servicios; i++) {
+                servicios[i].describir();
+            }
+        }
     }
 };
 
