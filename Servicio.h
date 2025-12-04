@@ -18,25 +18,75 @@ private:
 
 public:
     // Constructor por defecto: inicializa con valores vacíos
-    Servicio() {
+    Servicio();
+
+    // Constructor con parametros: inicializa con valores dados
+    Servicio(string t, int c);
+
+    // Getters para acceder a los atributos
+    string getTipo();
+
+    int getCosto();
+
+    // Void porque no regresa ningun tipo, imprime para mostrar información del servicio
+    void describir();
+
+};
+
+
+/**
+ * Constructor por default
+ *
+ * @param
+ * @return Objeto Servicio
+*/
+Servicio :: Servicio() {
         tipo = "";
         costo = 0;
     }
 
-    // Constructor con parametros: inicializa con valores dados
-    Servicio(string t, int c) {
+
+/**
+ * Constructor donde recibe valores para llenar las variables 
+ *
+ * @param string t: tipo de servicio , int c: el costo 
+ * @return
+*/
+Servicio :: Servicio(string t, int c) {
         tipo = t;
         costo = c;
     }
 
-    // Getters para acceder a los atributos
-    string get_tipo() { return tipo; }
-    int get_costo() { return costo; }
 
-    // Void porque no regresa ningun tipo, imprime para mostrar información del servicio
-    void describir() {
+/**
+ * getter de tipo
+ *
+ * @param
+ * @return string: Tipo 
+*/      
+string Servicio :: getTipo() { 
+    return tipo; 
+}
+
+/**
+ * getter de costo
+ *
+ * @param
+ * @return int: costo
+*/      
+int Servicio :: getCosto() { 
+    return costo;
+}
+
+
+/**
+ * void describir
+ *
+ * @param
+ * @return 
+*/      
+void Servicio :: describir(){
         cout << "Servicio: " << tipo << " | Costo: $" << costo << endl;
     }
-};
 
 #endif
