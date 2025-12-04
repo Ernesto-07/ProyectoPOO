@@ -20,62 +20,78 @@ private:
     string nombre; // nombre del taller
 
     Vehiculo vehiculos[MAX]; // arreglo de vehículos
-    int total_vehiculos;     // contador de vehículos registrados
+    int totalVehiculos;     // contador de vehículos registrados
 
     Servicio servicios[MAX]; // arreglo de servicios
-    int total_servicios;     // contador de servicios registrados
+    int totalServicios;     // contador de servicios registrados
 
 public:
     // Constructor: inicializa nombre y contadores
-    Taller(string n) {
-        nombre = n;
-        total_vehiculos = 0;
-        total_servicios = 0;
-    }
+    Taller(string n);
 
     // Método para agregar un vehículo al taller
-    void agregarVehiculo(string marca, string modelo) {
-        if (total_vehiculos < MAX) {
-            vehiculos[total_vehiculos] = Vehiculo(marca, modelo);
-            total_vehiculos++;
+    void agregarVehiculo(string marca, string modelo);
+
+    // Método para agregar un servicio al taller
+    void agregarServicio(Servicio s);
+
+    // Método para mostrar el estado del taller
+    void describir();
+};
+
+/**
+ * Constructor donde recibe valores para llenar las variables 
+ *
+ * @param string t: tipo de servicio , int c: el costo 
+ * @return
+*/
+Taller :: Taller(string n) {
+        nombre = n;
+        totalVehiculos = 0;
+        totalServicios = 0;
+    }
+
+void Taller :: agregarVehiculo(string marca, string modelo) {
+        if (totalVehiculos < MAX) {
+            vehiculos[totalVehiculos] = Vehiculo(marca, modelo);
+            totalVehiculos++;
         } else {
-            cout << "No se pueden agregar más vehículos." << endl;
+            cout << "No se pueden agregar mas vehiculos." << endl;
         }
     }
 
-    // Método para agregar un servicio al taller
-    void agregarServicio(Servicio s) {
-        if (total_servicios < MAX) {
-            servicios[total_servicios] = s;
-            total_servicios++;
+void Taller :: agregarServicio(Servicio s) {
+        if (totalServicios < MAX) {
+            servicios[totalServicios] = s;
+            totalServicios++;
         } else {
             cout << "No se pueden agregar más servicios." << endl;
         }
     }
 
-    // Método para mostrar el estado del taller
-    void describir() {
+void Taller :: describir(){
         cout << "\n===== Estado del Taller =====" << endl;
         cout << "Taller: " << nombre << endl;
 
         cout << "\nVehiculos registrados:" << endl;
-        if (total_vehiculos == 0) {
+        if (totalVehiculos == 0) {
             cout << "  Ninguno" << endl;
         } else {
-            for (int i = 0; i < total_vehiculos; i++) {
+            for (int i = 0; i < totalVehiculos; i++) {
                 vehiculos[i].describir();
             }
         }
 
         cout << "\nServicios disponibles:" << endl;
-        if (total_servicios == 0) {
+        if (totalServicios == 0) {
             cout << "  Ninguno" << endl;
         } else {
-            for (int i = 0; i < total_servicios; i++) {
+            for (int i = 0; i < totalServicios; i++) {
                 servicios[i].describir();
             }
         }
     }
-};
+
+
 
 #endif
