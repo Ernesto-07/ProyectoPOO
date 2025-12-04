@@ -18,22 +18,64 @@ private:
 
 public:
     // Constructor por defecto con datos ya definidos
-    Mecanico() : Persona("Carlos", "Hernandez", 40) {
+    Mecanico();
+
+    // Getters para acceder a los atributos
+    int getExperiencia();
+    int getCantidad();
+
+    // Método para mostrar información del mecánico
+    void bienvenida();
+};
+
+/**
+ * Constructor donde recibe valores para llenar las variables 
+ *
+ * @param string n: nombre, string a: apellido, int e: edad,
+ *          experiencia y cantidad como int. 
+ *      Todos los datos ya los di definidos para que el 
+ *      usuario solo vea el mecanico que dara el servicio. 
+ * @return
+*/
+Mecanico :: Mecanico() : Persona("Carlos", "Hernandez", 40) {
         experiencia = 10;
         cantidad = 25;
     }
 
-    // Getters para acceder a los atributos
-    int get_experiencia() { return experiencia; }
-    int get_cantidad() { return cantidad; }
 
-    // Método para mostrar información del mecánico
-    void bienvenida() {
+/**
+ * getter de experiencia del mecanico
+ *
+ * @param
+ * @return int: anos de experiencia del mecanico
+*/           
+int Mecanico :: getExperiencia(){ 
+    return experiencia;
+}
+
+
+/**
+ * getter de cantidad
+ *
+ * @param
+ * @return int: cantidad de servicios realizados por el mecanico
+*/       
+int Mecanico :: getCantidad(){ 
+    return cantidad;
+}
+
+
+/**
+ * void bienvenida
+ * no regresa nada 
+ * @param
+ * @return 
+*/      
+void Mecanico :: bienvenida (){
         cout << "Mecanico: " << nombre << " " << apellido
              << " | Edad: " << edad
              << " | Experiencia: " << experiencia << " anos"
              << " | Servicios realizados: " << cantidad << endl;
-    }
-};
+}
 
 #endif
