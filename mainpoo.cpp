@@ -70,9 +70,8 @@ int main() {
             //Caso 2: Agregar servicio al taller
             string tipo;
             int costo;
-            cout << "Ingrese tipo de servicio: ";
-            cin.ignore(); //limpia el buffer para getline
-            getline(cin, tipo);
+            cout << "Ingrese tipo de servicio(no uses espacios): ";
+            cin >> tipo;
             cout << "Ingrese costo: ";
             cin >> costo;
             Servicio s(tipo, costo);
@@ -85,7 +84,7 @@ int main() {
         else if(opcion == 4) {
             //Caso 4: Agregar cliente (objeto independiente)
             string nombre, apellido;
-            int edad, anos_uso, cantidad;
+            int edad, anosUso, cantidad;
             cout << "Ingrese nombre: ";
             cin >> nombre;
             cout << "Ingrese apellido: ";
@@ -93,10 +92,10 @@ int main() {
             cout << "Ingrese edad: ";
             cin >> edad;
             cout << "Ingrese anos de uso del vehiculo: ";
-            cin >> anos_uso;
+            cin >> anosUso;
             cout << "Ingrese cantidad de servicios realizados: ";
             cin >> cantidad;
-            Cliente c(nombre, apellido, edad, anos_uso, cantidad);
+            Cliente c(nombre, apellido, edad, anosUso, cantidad);
             cout << "Cliente agregado correctamente:" << endl;
             c.describir();
         }
