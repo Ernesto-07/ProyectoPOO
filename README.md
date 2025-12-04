@@ -54,3 +54,22 @@ Está hecho en C++ normal.
 
 # Correcciones
 
+Modelo un diagrama de clase útil para solucionar un problema utilizando UML, que pertenece a la sub-competencia de Toma de decisiones SICT0302A, el diagrama de clases puedes ser observado desde este repositorio.
+
+Implemento las clases en c++ siguiendo el diseño del diagrama de clases en UML, que pertenece a la sub-competencia de Toma de decisiones SICT0302A, el diagrama de clases puedes ser observado desde este repositorio.
+
+Implemento herencia de manera correcta y util, que pertenece a la sub-competencia de Implementa SICT0303A. La herencia se puede ver cuando Cliente.h y Mecanico.h heredan de Persona.h. 
+
+Impemento composición (o agregación) sieguiendo mi diagrama de clases, que pertenece a la sub-competencia de Implementa SICT0303A. # INCOMPLETOINCOMPLETOINCOMPLETO
+
+Implemento clases apegadas a requerimientos a partir de un modelo, que pertenece a la sub-competencia de Implementa SICT0303A. Se puede observar a lo largo de todo el codigo, cada clase pertenece a una parte del sistema y se apega a los requerimientos del modelo. 
+
+Sigo estándares en todo mi código fuente: estilo, sangrías, comentarios, nombres, etc..., que pertenece a la sub-competencia de Estándares SICT0401A. Se agregaron comentarios en todo el codigo que especifican y explican los parametros y lo que se regresa. Tambien se cuido lo de limite de caracteres y las sangrias. 
+
+Cumplo con estándares en mi repositorio: tiene un readme claro que explica el proyecto  (para que sirve,  para que no sirve y como se usa), no tiene archivos basura o versiones pasadas, que pertenece a la sub-competencia de Estándares SICT0401A. Se modifico el ReadMe para ser mucho mas claro y dejar en claro el contexto del proyecto y su funcionalidad, al igual de que como funciona y que hacer y no hacer.
+
+
+
+
+
+
