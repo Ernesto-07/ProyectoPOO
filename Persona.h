@@ -18,6 +18,9 @@ protected: // protegido para que las subclases puedan acceder
     int edad;        // edad de la persona
 
 public:
+
+    Persona();
+
     // Constructor con parametros: inicializa con valores dados
     Persona(string n, string a, int e);
 
@@ -32,6 +35,17 @@ public:
     void describir();
 };
 
+
+/**
+ * Constructor por defecto
+ * @param 
+ * @return Persona
+ */
+Persona :: Persona() {
+    nombre = "";
+    apellido = "";
+    edad = 0;
+}
 
 /**
  * Constructor donde recibe valores para llenar las variables 
