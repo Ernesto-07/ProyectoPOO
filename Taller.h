@@ -26,18 +26,32 @@ private:
     int totalServicios;     // contador de servicios registrados
 
 public:
+
+    Taller();
+
     // Constructor: inicializa nombre y contadores
     Taller(string n);
 
     // Método para agregar un vehículo al taller
-    void agregarVehiculo(string marca, string modelo);
+    void crearVehiculo(string marca, string modelo);
 
     // Método para agregar un servicio al taller
-    void agregarServicio(Servicio s);
+    void crearServicio(string tipo, int costo);
 
     // Método para mostrar el estado del taller
     void describir();
 };
+
+/**
+ * Constructor por defecto
+ * @param Taller
+ * @return
+ */
+Taller :: Taller() {
+    nombre = "";
+    totalVehiculos = 0;
+    totalServicios = 0;
+}
 
 /**
  * Constructor donde recibe valores para llenar las variables 
@@ -51,7 +65,7 @@ Taller :: Taller(string n) {
         totalServicios = 0;
     }
 
-void Taller :: agregarVehiculo(string marca, string modelo) {
+void Taller :: crearVehiculo(string marca, string modelo) {
         if (totalVehiculos < MAX) {
             vehiculos[totalVehiculos] = Vehiculo(marca, modelo);
             totalVehiculos++;
@@ -60,9 +74,9 @@ void Taller :: agregarVehiculo(string marca, string modelo) {
         }
     }
 
-void Taller :: agregarServicio(Servicio s) {
+void Taller :: crearServicio(string tipo, int costo) {
         if (totalServicios < MAX) {
-            servicios[totalServicios] = s;
+            servicios[totalServicios] =  Servicio(tipo, costo);
             totalServicios++;
         } else {
             cout << "No se pueden agregar más servicios." << endl;
