@@ -14,7 +14,7 @@ una persona que va a heredar a mecanico y cliente,
 
 un mecánico con su nombre, apellido, edad, experiencia,
 
-un cliente con su nombre, apellido, edad, anos de uso,
+un cliente con su nombre, apellido, edad, años de uso,
 
 un vehículo con marca y modelo,
 
