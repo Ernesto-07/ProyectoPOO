@@ -13,19 +13,22 @@ using namespace std;
 
 class Mecanico : public Persona {
 private:
-    int experiencia; // años de experiencia
-    int cantidad;    // cantidad de servicios realizados
+    float experiencia; // años de experiencia
+    float cantidad;    // cantidad de servicios realizados
 
 public:
     // Constructor por defecto con datos ya definidos
     Mecanico();
 
     // Constructor con parámetros
-    Mecanico(string n, string a, int e, int exp, int c);
+    Mecanico(string n, string a, float e, float exp, float c);
 
     // Getters para acceder a los atributos
-    int getExperiencia();
-    int getCantidad();
+    float getExperiencia();
+    float getCantidad();
+
+    // Setter para actualizar la experiencia del mecánico
+    void setExperiencia(float exp);
 
     // Método para mostrar información del mecánico
     void bienvenida();
@@ -46,12 +49,12 @@ Mecanico :: Mecanico() : Persona("", "", 0) {
  * Constructor parametrizado
  * @param string n: el nombre del mecanico,
  *        string a: el apellido del mecanico,
- *        int e: la edad,
- *        int exp: experiencia del mecanico,
- *        int c: cantidad de servicios
+ *        float e: la edad,
+ *        float exp: experiencia del mecanico,
+ *        float c: cantidad de servicios
  * @return 
  */
-Mecanico :: Mecanico(string n, string a, int e, int exp, int c) 
+Mecanico :: Mecanico(string n, string a, float e, float exp, float c) 
     : Persona(n, a, e) {
     experiencia = exp;
     cantidad = c;
@@ -61,9 +64,9 @@ Mecanico :: Mecanico(string n, string a, int e, int exp, int c)
  * getter de experiencia del mecanico
  *
  * @param
- * @return int: anos de experiencia del mecanico
+ * @return float: anos de experiencia del mecanico
 */           
-int Mecanico :: getExperiencia(){ 
+float Mecanico :: getExperiencia(){ 
     return experiencia;
 }
 
@@ -72,12 +75,21 @@ int Mecanico :: getExperiencia(){
  * getter de cantidad
  *
  * @param
- * @return int: cantidad de servicios realizados por el mecanico
+ * @return float: cantidad de servicios realizados por el mecanico
 */       
-int Mecanico :: getCantidad(){ 
+float Mecanico :: getCantidad(){ 
     return cantidad;
 }
 
+/**
+ * sstter de experiencia
+ *
+ * @param float: experiencia
+ * @return 
+*/   
+void Mecanico :: setExperiencia(float exp) {
+    experiencia = exp;
+}
 
 /**
  * void bienvenida

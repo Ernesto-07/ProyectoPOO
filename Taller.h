@@ -44,7 +44,7 @@ public:
 
 /**
  * Constructor por defecto
- * @param Taller
+ * @param 
  * @return
  */
 Taller :: Taller() {
@@ -56,7 +56,7 @@ Taller :: Taller() {
 /**
  * Constructor donde recibe valores para llenar las variables 
  *
- * @param string t: tipo de servicio , int c: el costo 
+ * @param string n : nombre 
  * @return
 */
 Taller :: Taller(string n) {
@@ -64,6 +64,12 @@ Taller :: Taller(string n) {
         totalVehiculos = 0;
         totalServicios = 0;
     }
+
+
+/* Se usa crearVehiculo y crearServicio como composicion
+*  ya que se crean los objetos dentro de esta misma clase 
+*  como se ve abajo (se crea Vehiculo y Servicio).
+*/ 
 
 void Taller :: crearVehiculo(string marca, string modelo) {
         if (totalVehiculos < MAX) {
@@ -76,7 +82,7 @@ void Taller :: crearVehiculo(string marca, string modelo) {
 
 void Taller :: crearServicio(string tipo, int costo) {
         if (totalServicios < MAX) {
-            servicios[totalServicios] =  Servicio(tipo, costo);
+            servicios[totalServicios] =  Servicio(tipo, costo);;
             totalServicios++;
         } else {
             cout << "No se pueden agregar más servicios." << endl;

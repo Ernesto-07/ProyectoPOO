@@ -15,21 +15,21 @@ class Persona {
 protected: // protegido para que las subclases puedan acceder
     string nombre;   // nombre de la persona
     string apellido; // apellido de la persona
-    int edad;        // edad de la persona
+    float edad;        // edad de la persona
 
 public:
 
     Persona();
 
     // Constructor con parametros: inicializa con valores dados
-    Persona(string n, string a, int e);
+    Persona(string n, string a, float e);
 
     // Getters para acceder a los atributos
     string getNombre();
 
     string getApellido();
 
-    int getEdad();
+    float getEdad();
 
     // Método común para mostrar información de la persona
     void describir();
@@ -39,7 +39,7 @@ public:
 /**
  * Constructor por defecto
  * @param 
- * @return Persona
+ * @return 
  */
 Persona :: Persona() {
     nombre = "";
@@ -50,10 +50,10 @@ Persona :: Persona() {
 /**
  * Constructor donde recibe valores para llenar las variables 
  *
- * @param string n: nombre, string a: apellido, int e: edad,
+ * @param string n: nombre, string a: apellido, float e: edad,
  * @return
 */
-Persona :: Persona(string n, string a, int e){
+Persona :: Persona(string n, string a, float e){
         nombre = n;
         apellido = a;
         edad = e;
@@ -86,9 +86,9 @@ string Persona :: getApellido(){
  * getter de edad
  *
  * @param
- * @return int: edad
+ * @return float: edad
 */      
-int Persona :: getEdad(){ 
+float Persona :: getEdad(){ 
         return edad;
     }
 

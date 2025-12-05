@@ -71,11 +71,16 @@ int main() {
         else if(opcion == 2) {
             //Caso 2: Agregar servicio al taller
             string tipo;
-            int costo;
+            float costo;
             cout << "Ingrese tipo de servicio (no uses espacios): ";
             cin >> tipo;
-            cout << "Ingrese costo: ";
+            cout << "Ingrese costo (Dato entero): ";
             cin >> costo;
+            if(cin.fail() || costo < 0){
+                cin.clear();
+                cout << "Ingresa numero entero mayor a 0" << endl;
+                continue;
+            }
             t1.crearServicio(tipo, costo);
         }
         else if(opcion == 3) {
@@ -85,17 +90,32 @@ int main() {
         else if(opcion == 4) {
             //Caso 4: Agregar cliente (objeto independiente)
             string nombre, apellido;
-            int edad, anosUso, cantidad;
+            float edad, anosUso, cantidad;
             cout << "Ingrese nombre: ";
             cin >> nombre;
             cout << "Ingrese apellido: ";
             cin >> apellido;
-            cout << "Ingrese edad: ";
+            cout << "Ingrese edad (Dato entero): ";
             cin >> edad;
-            cout << "Ingrese anos de uso del vehiculo: ";
+            if(cin.fail() || edad < 0){
+                cin.clear();
+                cout << "Ingresa numero entero mayor a 0" << endl;
+                continue;
+            }
+            cout << "Ingrese anos de uso del vehiculo (Dato entero): ";
             cin >> anosUso;
-            cout << "Ingrese cantidad de servicios realizados: ";
+            if(cin.fail() || anosUso < 0){
+                cin.clear();
+                cout << "Ingresa numero entero mayor a 0" << endl;
+                continue;
+            }
+            cout << "Ingrese cantidad de servicios realizados (Dato entero): ";
             cin >> cantidad;
+            if(cin.fail() || cantidad < 0){
+                cin.clear();
+                cout << "Ingresa numero entero mayor a 0" << endl;
+                continue;
+            }
             Cliente c(nombre, apellido, edad, anosUso, cantidad);
             cout << "Cliente agregado correctamente:" << endl;
             c.describir();
@@ -103,23 +123,40 @@ int main() {
         else if(opcion == 5) {
             // Caso 5: Agregar mecánico con datos ingresados por el usuario
             string nombre, apellido;
-            int edad, experiencia, cantidad;
+            float edad, experiencia, cantidad;
 
             cout << "Ingrese nombre del mecanico: ";
             cin >> nombre;
             cout << "Ingrese apellido del mecanico: ";
             cin >> apellido;
-            cout << "Ingrese edad: ";
+            cout << "Ingrese edad (Dato entero): ";
             cin >> edad;
-            cout << "Ingrese anos de experiencia: ";
+            if(cin.fail() || edad < 0){
+                cin.clear();
+                cout << "Ingresa numero entero mayor a 0" << endl;
+                continue;
+            }
+            cout << "Ingrese anos de experiencia (Dato entero): ";
             cin >> experiencia;
-            cout << "Ingrese cantidad de servicios realizados: ";
+            if(cin.fail() || experiencia < 0){
+                cin.clear();
+                cout << "Ingresa numero entero mayor a 0" << endl;
+                continue;
+            }
+            cout << "Ingrese cantidad de servicios realizados (Dato entero): ";
             cin >> cantidad;
+            if(cin.fail() || cantidad < 0){
+                cin.clear();
+                cout << "Ingresa numero entero mayor a 0" << endl;
+                continue;
+            }
 
             Mecanico m(nombre, apellido, edad, experiencia, cantidad);
             cout << "Mecanico agregado correctamente:" << endl;
             m.bienvenida();
-}
+            m.setExperiencia(15); // actualiza la experiencia
+            m.bienvenida(); // ahora muestra experiencia 15
+            }
         else if(opcion == 0) {
             //Caso 0: Salir del programa
             cout << "Saliendo del programa..." << endl;

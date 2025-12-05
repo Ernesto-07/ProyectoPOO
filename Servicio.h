@@ -14,19 +14,19 @@ using namespace std;
 class Servicio {
 private:
     string tipo;   // tipo de servicio 
-    int costo;     // costo del servicio en pesos
+    float costo;     // costo del servicio en pesos
 
 public:
     // Constructor por defecto: inicializa con valores vacíos
     Servicio();
 
     // Constructor con parametros: inicializa con valores dados
-    Servicio(string t, int c);
+    Servicio(string t, float c);
 
     // Getters para acceder a los atributos
     string getTipo();
 
-    int getCosto();
+    float getCosto();
 
     // Void porque no regresa ningun tipo, imprime para mostrar información del servicio
     void describir();
@@ -49,10 +49,10 @@ Servicio :: Servicio() {
 /**
  * Constructor donde recibe valores para llenar las variables 
  *
- * @param string t: tipo de servicio , int c: el costo 
+ * @param string t: tipo de servicio , float c: el costo 
  * @return
 */
-Servicio :: Servicio(string t, int c) {
+Servicio :: Servicio(string t, float c) {
         tipo = t;
         costo = c;
     }
@@ -72,9 +72,9 @@ string Servicio :: getTipo() {
  * getter de costo
  *
  * @param
- * @return int: costo
+ * @return float: costo
 */      
-int Servicio :: getCosto() { 
+float Servicio :: getCosto() { 
     return costo;
 }
 
