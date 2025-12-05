@@ -7,11 +7,13 @@
 
 /**
  * Descripción:
- * Este es un proyecto demo para la clase de Pensamiento Computacional
- * Orientado a Objetos. Es un programa que captura vehículos y servicios
- * de un taller mecánico, además de permitir registrar clientes y mecánicos
- * como objetos independientes. El sistema permite mostrar el estado del taller
- * y la información de clientes y mecánicos.
+ * Este es un proyecto demo para la clase de Pensamiento 
+ * Computacional Orientado a Objetos. Es un programa que 
+ * captura vehículos y servicios de un taller mecánico, 
+ * además de permitir registrar clientes y mecánicos 
+ * como objetos independientes. El sistema permite 
+ * mostrar el estado del taller y la información 
+ * de clientes y mecánicos.
  */
 
 //Bibliotecas
@@ -33,7 +35,7 @@ void menu() {
     cout << "2. Agregar Servicio \n";
     cout << "3. Mostrar Taller \n";
     cout << "4. Agregar Cliente \n";
-    cout << "5. Mostrar Mecanico \n";
+    cout << "5. Agregar Mecanico \n";
     cout << "0. Salir \n";
 }
 
@@ -64,18 +66,17 @@ int main() {
             cin >> marca;
             cout << "Ingrese modelo: ";
             cin >> modelo;
-            t1.agregarVehiculo(marca, modelo);
+            t1.crearVehiculo(marca, modelo);
         }
         else if(opcion == 2) {
             //Caso 2: Agregar servicio al taller
             string tipo;
             int costo;
-            cout << "Ingrese tipo de servicio(no uses espacios): ";
+            cout << "Ingrese tipo de servicio (no uses espacios): ";
             cin >> tipo;
             cout << "Ingrese costo: ";
             cin >> costo;
-            Servicio s(tipo, costo);
-            t1.agregarServicio(s);
+            t1.crearServicio(tipo, costo);
         }
         else if(opcion == 3) {
             //Caso 3: Mostrar estado del taller
@@ -100,10 +101,25 @@ int main() {
             c.describir();
         }
         else if(opcion == 5) {
-            //Caso 5: Mostrar mecánico ya definido
-            cout << "Mostrando informacion del mecanico:" << endl;
-            mecanico1.bienvenida();
-        }
+            // Caso 5: Agregar mecánico con datos ingresados por el usuario
+            string nombre, apellido;
+            int edad, experiencia, cantidad;
+
+            cout << "Ingrese nombre del mecanico: ";
+            cin >> nombre;
+            cout << "Ingrese apellido del mecanico: ";
+            cin >> apellido;
+            cout << "Ingrese edad: ";
+            cin >> edad;
+            cout << "Ingrese anos de experiencia: ";
+            cin >> experiencia;
+            cout << "Ingrese cantidad de servicios realizados: ";
+            cin >> cantidad;
+
+            Mecanico m(nombre, apellido, edad, experiencia, cantidad);
+            cout << "Mecanico agregado correctamente:" << endl;
+            m.bienvenida();
+}
         else if(opcion == 0) {
             //Caso 0: Salir del programa
             cout << "Saliendo del programa..." << endl;
