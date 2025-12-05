@@ -36,8 +36,10 @@ El menu tiene 6 opciones a considerar:
 
 # Cosas que harian tronar el codigo
 
+Al usuario poner un dato diferente al pedido en las opciones del menu lo sacara inmediatamente del programa.
 1. Si el usuario escribe texto donde esperas un número (por ejemplo en edad o costo), cin entra en un estado de error. 
 2. Si el usuario mete un valor no numérico, cin falla y opcion no se actualiza, por lo que probablemente te saque del programa o se ciclara el menu hasta que sea una opcion valida.
+3. Si el usuario mete un string con espacios, haria ciclarse el codgio. 
 
 
 # Consideraciones
