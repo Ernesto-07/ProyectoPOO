@@ -26,7 +26,7 @@ Después, muestra esos datos en consola y también imprime mensajes como la desc
 
 # Diagrama de clases 
 
-[UML](./UML.png)
+[UML](./UML..png)
 
 # Menu 
 
