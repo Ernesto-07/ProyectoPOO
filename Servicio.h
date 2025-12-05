@@ -13,7 +13,7 @@ using namespace std;
 
 class Servicio {
 private:
-    string tipo;   // tipo de servicio (ej. cambio de aceite)
+    string tipo;   // tipo de servicio 
     int costo;     // costo del servicio en pesos
 
 public:
