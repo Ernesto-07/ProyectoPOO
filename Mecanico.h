@@ -1,93 +1,95 @@
 /*
- * Clase Vehiculo
- * Representa un vehículo dentro del taller.
- * Contiene marca y modelo.
+ * Clase Mecanico
+ * Hereda de Persona.
+ * Representa un mecánico con experiencia y cantidad de servicios realizados.
  */
 
-#ifndef VEHICULO_H
-#define VEHICULO_H
+#ifndef MECANICO_H
+#define MECANICO_H
 
-#include <string>
+#include "Persona.h"
 #include <iostream>
 using namespace std;
 
-class Vehiculo {
+class Mecanico : public Persona {
 private:
-    //DECLARACION DE VARIABLES
-
-    string marca;  // marca del vehiculo
-    string modelo; // modelo del vehiculo
+    int experiencia; // años de experiencia
+    int cantidad;    // cantidad de servicios realizados
 
 public:
-    //DECLARACION DE LOS METODOS QUE TENDRA EL OBJETO
+    // Constructor por defecto con datos ya definidos
+    Mecanico();
 
-    // Constructor por defecto: inicializa con valores vacios
-    Vehiculo();
-
-    // Constructor con paametros: inicializa con valores dados
-    Vehiculo(string m, string mod);
+    // Constructor con parámetros
+    Mecanico(string n, string a, int e, int exp, int c);
 
     // Getters para acceder a los atributos
-    string getMarca();
-    string getModelo();
+    int getExperiencia();
+    int getCantidad();
 
-    // Metodo para mostrar informacion del vehiculo
-    void describir();
+    // Método para mostrar información del mecánico
+    void bienvenida();
 };
 
+
 /**
- * Constructor por default
+ * Constructor por defecto vacío
+ * @param
+ * @return Mecanico
+ */
+Mecanico :: Mecanico() : Persona("", "", 0) {
+    experiencia = 0;
+    cantidad = 0;
+}
+
+/**
+ * Constructor parametrizado
+ * @param string n: el nombre del mecanico,
+ *        string a: el apellido del mecanico,
+ *        int e: la edad,
+ *        int exp: experiencia del mecanico,
+ *        int c: cantidad de servicios
+ * @return 
+ */
+Mecanico :: Mecanico(string n, string a, int e, int exp, int c) 
+    : Persona(n, a, e) {
+    experiencia = exp;
+    cantidad = c;
+}
+
+/**
+ * getter de experiencia del mecanico
  *
  * @param
- * @return Objeto Vehiculo
-*/
-Vehiculo :: Vehiculo() {
-        marca = "";
-        modelo = "";
-    }
-
-
-/**
- * Constructor donde recibe valores para llenar las variables 
- *
- * @param string m: la marca , string mod: el modelo
- * @return
-*/
-Vehiculo :: Vehiculo(string m, string mod) {
-        marca = m;
-        modelo = mod;
-    }
-
-
-/**
- * getter de marca
- *
- * @param
- * @return string: marca del vehiculo
-*/       
-string Vehiculo :: getMarca() { 
-        return marca; 
-    }
-
-
-/**
- * getter de modelo
- *
- * @param
- * @return string: modelo del vehiculo
+ * @return int: anos de experiencia del mecanico
 */           
-string Vehiculo :: getModelo() { 
-        return modelo; 
-    }
+int Mecanico :: getExperiencia(){ 
+    return experiencia;
+}
+
 
 /**
- * void describir
+ * getter de cantidad
+ *
+ * @param
+ * @return int: cantidad de servicios realizados por el mecanico
+*/       
+int Mecanico :: getCantidad(){ 
+    return cantidad;
+}
+
+
+/**
+ * void bienvenida
  * no regresa nada 
  * @param
  * @return 
 */      
-void Vehiculo :: describir() {
-        cout << "Vehiculo: " << marca << " " << modelo << endl;
-    }
+void Mecanico :: bienvenida (){
+        cout << "Mecanico: " << nombre << " " << apellido
+             << " | Edad: " << edad
+             << " | Experiencia: " << experiencia << " anos"
+             << " | Servicios realizados: " << cantidad << endl;
+}
 
 #endif
