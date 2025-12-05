@@ -21,6 +21,8 @@ private:
 public:
     //DECLARACION DE LOS METODOS QUE TENDRA EL OBJETO
 
+    Cliente();
+    
     // Constructor con parametros: inicializa atributos de Persona y Cliente
     Cliente(string n, string a, int e, int au, int c);
 
@@ -37,14 +39,26 @@ public:
 
 // DEFINICIONES DE CADA METODO
 
+/**
+ * Constructor por default
+ *
+ * @param
+ * @return Cliente
+*/
+Cliente :: Cliente() : Persona("", "", 0) {
+    anosUso = 0;
+    cantidad = 0;
+}
 
 /**
  * Constructor donde recibe valores para llenar las variables
  *
- * @param string n: el nombre del cliente, string a: el apellido del cliente,
- *        int e: la edad, int au: anos de uso coche, int c: cantidad de servicios
- * @return
-*/
+ * @param string n: el nombre del cliente,
+ *        string a: el apellido del cliente,
+ *        int e: la edad,
+ *        int au: años de uso del coche,
+ *        int c: cantidad de servicios
+ */
 Cliente :: Cliente (string n, string a, int e, int au, int c) 
     : Persona(n, a, e){ // llamada al constructor de Persona
         anosUso = au;
