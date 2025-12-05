@@ -62,7 +62,7 @@ Implemento las clases en c++ siguiendo el diseño del diagrama de clases en UML,
 
 Implemento herencia de manera correcta y util, que pertenece a la sub-competencia de Implementa SICT0303A. La herencia se puede ver cuando Cliente.h y Mecanico.h heredan de Persona.h. 
 
-Impemento composición (o agregación) sieguiendo mi diagrama de clases, que pertenece a la sub-competencia de Implementa SICT0303A. # INCOMPLETOINCOMPLETOINCOMPLETO
+Impemento composición (o agregación) sieguiendo mi diagrama de clases, que pertenece a la sub-competencia de Implementa SICT0303A. Se implemento Composicion al conectar Vehiculo y Servicio mediante composicion a Taller. En mi codigo se ve cuando creo los objetos Vehiculos y Servicio dentro de Taller, lo que significa que si se elimina taller, tambien las otras dos. 
 
 Implemento clases apegadas a requerimientos a partir de un modelo, que pertenece a la sub-competencia de Implementa SICT0303A. Se puede observar a lo largo de todo el codigo, cada clase pertenece a una parte del sistema y se apega a los requerimientos del modelo. 
 
