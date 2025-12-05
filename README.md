@@ -10,11 +10,17 @@ Este proyecto es sobre un taller mecánico. La idea es tener clases básicas que
 
 El programa crea:
 
+una persona que va a heredar a mecanico y cliente, 
+
+un mecánico con su nombre, apellido, edad, experiencia,
+
+un cliente con su nombre, apellido, edad, anos de uso,
+
 un vehículo con marca y modelo,
 
-un mecánico con su nombre,
+un servicio con su tipo y costo,
 
-un servicio con su tipo y costo.
+y un taller que se conectara por composicion a servicio y vehiculo.
 
 Después, muestra esos datos en consola y también imprime mensajes como la descripción del vehículo, una bienvenida del mecánico y el costo del servicio.
 
@@ -31,7 +37,7 @@ El menu tiene 6 opciones a considerar:
 2. Opcion de agregar el servicio que se le dara al vehiculo
 3. Opcion de mostrar lo que lleva por ahora el taller (los vehiculos con sus respectivos servicios)
 4. Opcion de agregar al cliente con su nombre, apellido, edad, etc.
-5. Opcion de mostrar al mecanico que dara el servicio.
+5. Opcion de agregar al mecanico que dara el servicio.
 
 # Uso de .fail y .clear
 
@@ -40,9 +46,7 @@ Use cin.fail y cin.clear para que cuando se ingrese un valor menor a 0 en los ca
 # Cosas que harian tronar el codigo
 
 Al usuario poner un dato diferente al pedido en las opciones del menu lo sacara inmediatamente del programa.
-1. Si el usuario escribe texto donde esperas un número (por ejemplo en edad o costo), cin entra en un estado de error. 
-2. Si el usuario mete un valor no numérico, cin falla y opcion no se actualiza, por lo que probablemente te saque del programa o se ciclara el menu hasta que sea una opcion valida.
-3. Si el usuario mete un string con espacios, haria ciclarse el codgio. 
+1. Si el usuario escribe un tipo de dato no esperado (por ejemplo en edad o costo), simplemente sacara al usuario del programa.  
 
 
 # Consideraciones
