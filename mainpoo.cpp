@@ -116,9 +116,8 @@ int main() {
                 cout << "Ingresa numero entero mayor a 0" << endl;
                 continue;
             }
-            Cliente c(nombre, apellido, edad, anosUso, cantidad);
-            cout << "Cliente agregado correctamente:" << endl;
-            c.describir();
+            Persona* nuevoCliente = new Cliente(nombre, apellido, edad, anosUso, cantidad);
+            t1.agregarPersona(*nuevoCliente);
         }
         else if(opcion == 5) {
             // Caso 5: Agregar mecánico con datos ingresados por el usuario
@@ -151,11 +150,8 @@ int main() {
                 continue;
             }
 
-            Mecanico m(nombre, apellido, edad, experiencia, cantidad);
-            cout << "Mecanico agregado correctamente:" << endl;
-            m.bienvenida();
-            m.setExperiencia(15); // actualiza la experiencia
-            m.bienvenida(); // ahora muestra experiencia 15
+            Persona* nuevoMecanico = new Mecanico(nombre, apellido, edad, experiencia, cantidad);
+            t1.agregarPersona(*nuevoMecanico);
             }
         else if(opcion == 0) {
             //Caso 0: Salir del programa
