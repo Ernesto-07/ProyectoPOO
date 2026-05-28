@@ -32,7 +32,7 @@ public:
     float getCantidad();
 
     // Método para mostrar información del cliente
-    void describir();
+    void describir() override;
 
     
 };
