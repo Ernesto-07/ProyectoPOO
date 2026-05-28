@@ -31,7 +31,7 @@ public:
     void setExperiencia(float exp);
 
     // Método para mostrar información del mecánico
-    void bienvenida();
+    void describir() override;
 };
 
 
@@ -97,7 +97,7 @@ void Mecanico :: setExperiencia(float exp) {
  * @param
  * @return 
 */      
-void Mecanico :: bienvenida (){
+void Mecanico :: describir (){
         cout << "Mecanico: " << nombre << " " << apellido
              << " | Edad: " << edad
              << " | Experiencia: " << experiencia << " anos"
