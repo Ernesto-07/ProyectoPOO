@@ -32,7 +32,7 @@ public:
     float getEdad();
 
     // Método común para mostrar información de la persona
-    void describir();
+    virtual void describir();
 };
 
 
