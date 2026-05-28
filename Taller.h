@@ -8,9 +8,11 @@
 #define TALLER_H
 
 #define MAX 5 // se defne un maximo de 5
+#define MAX_PERSONAS 10 // se define un maximo de 10 personas
 
 #include "Vehiculo.h"
 #include "Servicio.h"
+#include "Persona.h"
 #include <string>
 #include <iostream>
 using namespace std;
@@ -25,6 +27,9 @@ private:
     Servicio servicios[MAX]; // arreglo de servicios
     int totalServicios;     // contador de servicios registrados
 
+    Persona* listaPersonas[MAX_PERSONAS]; // 
+    int totalPersonas;
+
 public:
 
     Taller();
@@ -32,11 +37,14 @@ public:
     // Constructor: inicializa nombre y contadores
     Taller(string n);
 
+    ~Taller(); 
+    void agregarPersona(Persona& p);
+
     // Método para agregar un vehículo al taller
     void crearVehiculo(string marca, string modelo);
 
     // Método para agregar un servicio al taller
-    void crearServicio(string tipo, int costo);
+    void crearServicio(string tipo, float costo);
 
     // Método para mostrar el estado del taller
     void describir();
@@ -51,6 +59,7 @@ Taller :: Taller() {
     nombre = "";
     totalVehiculos = 0;
     totalServicios = 0;
+    totalPersonas = 0;
 }
 
 /**
@@ -63,8 +72,23 @@ Taller :: Taller(string n) {
         nombre = n;
         totalVehiculos = 0;
         totalServicios = 0;
+        totalPersonas = 0;
     }
 
+Taller :: ~Taller() {
+    for (int i = 0; i < totalPersonas; i++) {
+        delete listaPersonas[i]; 
+    }
+}
+
+void Taller::agregarPersona(Persona& p) {
+    if (totalPersonas < 10) {
+        listaPersonas[totalPersonas] = &p; // Guardamos la direccion de memoria
+        totalPersonas++;
+    } else {
+        cout << "No se pueden registrar mas personas." << endl;
+    }
+}
 
 /* Se usa crearVehiculo y crearServicio como composicion
 *  ya que se crean los objetos dentro de esta misma clase 
@@ -80,7 +104,7 @@ void Taller :: crearVehiculo(string marca, string modelo) {
         }
     }
 
-void Taller :: crearServicio(string tipo, int costo) {
+void Taller :: crearServicio(string tipo, float costo) {
         if (totalServicios < MAX) {
             servicios[totalServicios] =  Servicio(tipo, costo);;
             totalServicios++;
@@ -90,6 +114,11 @@ void Taller :: crearServicio(string tipo, int costo) {
     }
 
 void Taller :: describir(){
+        
+        cout << "\nPersonas registradas:" << endl;
+        for (int i = 0; i < totalPersonas; i++) {
+            listaPersonas[i]->describir(); // Usar flechita (->) en lugar de punto (.)
+        }
         cout << "\n===== Estado del Taller =====" << endl;
         cout << "Taller: " << nombre << endl;
 
